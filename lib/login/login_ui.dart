@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:ui_sample/components/button.dart';
+import 'package:ui_sample/components/text_input.dart';
 
 class LoginUI extends StatelessWidget {
   const LoginUI({super.key});
@@ -31,7 +33,7 @@ class _Form extends StatelessWidget {
             style: Theme.of(context)
                 .textTheme
                 .titleLarge!
-                .copyWith(fontWeight: FontWeight.w900, fontSize: 30),
+                .copyWith(fontWeight: FontWeight.w900),
           ),
           Text(
             "Sign in to continue",
@@ -43,37 +45,13 @@ class _Form extends StatelessWidget {
           const SizedBox(
             height: 40,
           ),
-          TextField(
-            style: const TextStyle(
-                color: Colors.black, fontWeight: FontWeight.w500),
-            decoration: InputDecoration(
-              hintText: '',
-              hintStyle:
-                  const TextStyle(height: 2, fontWeight: FontWeight.bold),
-              labelText: "Username",
-              labelStyle: Theme.of(context)
-                  .textTheme
-                  .titleMedium!
-                  .copyWith(color: Colors.grey),
-            ),
-          ),
+          const TextInput(label: "Username"),
           const SizedBox(
             height: 40,
           ),
-          TextField(
-            obscureText: true,
-            style: const TextStyle(
-                color: Colors.black, fontWeight: FontWeight.w500),
-            decoration: InputDecoration(
-              hintText: '',
-              hintStyle:
-                  const TextStyle(height: 2, fontWeight: FontWeight.bold),
-              labelText: "Password",
-              labelStyle: Theme.of(context)
-                  .textTheme
-                  .titleMedium!
-                  .copyWith(color: Colors.grey),
-            ),
+          const TextInput(
+            label: "Password",
+            obsecure: true,
           ),
           const SizedBox(
             height: 40,
@@ -91,23 +69,9 @@ class _Form extends StatelessWidget {
           const SizedBox(
             height: 40,
           ),
-          SizedBox(
-            width: double.infinity,
-            height: 50,
-            child: ElevatedButton(
-              style: ButtonStyle(
-                foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(5),
-                    side: const BorderSide(color: Colors.red),
-                  ),
-                ),
-              ),
-              onPressed: () {},
-              child: const Text("SIGN IN"),
-            ),
+          ButtonPrimary(
+            onPressed: () => print("login"),
+            text: "Sign In",
           ),
           const Spacer(),
           const Row(

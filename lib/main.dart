@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_sample/login/login_ui.dart';
+import 'package:ui_sample/welcome/welcome.dart';
 import 'package:window_manager/window_manager.dart';
 
 Future<void> main() async {
@@ -76,7 +77,21 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 );
               },
-              child: const Text("to LoginUI"),
+              child: const Text("to Login UI"),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const WelcomePage(),
+                  ),
+                );
+              },
+              child: const Text("to Welcome UI"),
             ),
             const SizedBox(
               height: 20,

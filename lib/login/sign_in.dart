@@ -5,6 +5,11 @@ class SignInPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(
+        leading: const Icon(Icons.arrow_back_ios_new),
+      ),
+      body: Column(),
+    );
   }
 }

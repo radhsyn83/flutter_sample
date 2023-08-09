@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_sample/home/home_ui.dart';
 import 'package:ui_sample/login/login_ui.dart';
 import 'package:ui_sample/welcome/welcome.dart';
 import 'package:window_manager/window_manager.dart';
@@ -6,19 +7,19 @@ import 'package:window_manager/window_manager.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   // Must add this line.
-  await windowManager.ensureInitialized();
+  // await windowManager.ensureInitialized();
 
-  WindowOptions windowOptions = const WindowOptions(
-    size: Size(350, 800),
-    center: true,
-    backgroundColor: Colors.transparent,
-    skipTaskbar: false,
-    titleBarStyle: TitleBarStyle.hidden,
-  );
-  windowManager.waitUntilReadyToShow(windowOptions, () async {
-    await windowManager.show();
-    await windowManager.focus();
-  });
+  // WindowOptions windowOptions = const WindowOptions(
+  //   size: Size(350, 800),
+  //   center: true,
+  //   backgroundColor: Colors.transparent,
+  //   skipTaskbar: false,
+  //   titleBarStyle: TitleBarStyle.hidden,
+  // );
+  // windowManager.waitUntilReadyToShow(windowOptions, () async {
+  //   await windowManager.show();
+  //   await windowManager.focus();
+  // });
 
   runApp(const MyApp());
 }
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const HomeUI(),
     );
   }
 }
